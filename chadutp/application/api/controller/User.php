@@ -14,9 +14,14 @@ class User extends Common
             $APPSecret = '8610c7e6bd39b4d6f9907065c436d37c';
             $js_code = input('code/s');
             $url = "https://api.weixin.qq.com/sns/jscode2session?appid=$AppID&secret=$APPSecret&js_code=$js_code&grant_type=authorization_code";
-            $openID = file_get_contents($url);
-//            return $openID;
-            $this->return_msg(200,'用户信息传输成功！',json_decode($openID,true));  //json_decode 一对JSON格式的字符串进行解码
+            $openID=$this->curl_get($url);
+            $openID=json_decode($openID, TRUE);
+            $is_openid = Db::table('user')->where('openid',$openID['openid'])->find();
+            if($is_openid){
+            }else{
+                $userdata['openid']=$openID['openid'];
+                DB::table('user')->insert($userdata);
+            }
         }else{
             $this->return_msg(400,'用户信息传输失败！');
         }
@@ -31,7 +36,7 @@ class User extends Common
             if ($info) {
                 $this->return_msg(200,'获取用户信息成功！',$info);
             }else{
-                $this->return_msg(401,'请获取用户信息');//这里的状态码，最好改成其他的。用作前端判断
+                $this->return_msg(401,'请获取用户信息！');//这里的状态码，最好改成其他的。用作前端判断
             }
         }else{
             $this->return_msg(400,'请求类型错误！');
@@ -46,5 +51,26 @@ class User extends Common
             $this->return_msg(400,'请求类型错误！');
         }
     }
+    function curl_get($url='',$postdata='', $options=array()){
+
+        $ch = curl_init($url);
+
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_POST, 0);
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+
+        if($postdata){
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $postdata);
+        }
+
+        if (!empty($options)){
+            curl_setopt_array($ch, $options);
+        }
+        $data = curl_exec($ch);
+        curl_close($ch);
+        return $data;
+    }
+
 
 }
