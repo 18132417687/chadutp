@@ -23,9 +23,9 @@ class User extends BaseController
     public function user_add(){
         $data = Request::instance()->param();  //获取当前请求变量
         if(!empty($data)){
-            $file = request()->file('avatarurl');
-            $avatarurl = $this->upload($file);
-            $data['avatarurl'] = $avatarurl;
+            $file = request()->file('avatarUrl');
+            $avatarUrl = $this->upload($file);
+            $data['avatarUrl'] = $avatarUrl;
             $res =DB::name('user')->insert($data);
             if ($res){
                 $this->success('新增成功！','user/user_list');
