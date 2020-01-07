@@ -39,9 +39,9 @@ class User extends BaseController
     public function user_edit($id){
         $da = Request::instance()->post();
         if(!empty($da)){
-            $file = request()->file('avatarurl');
-            $avatarurl = $this->upload($file);
-            $da['avatarurl'] = $avatarurl;
+            $file = request()->file('avatarUrl');
+            $avatarUrl = $this->upload($file);
+            $da['avatarUrl'] = $avatarUrl;
             $rs = Db::name('user')->where('id',$da['id'])->update($da);
             if($rs){
                 $this->success('修改成功！','user/user_list');
