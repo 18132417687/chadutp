@@ -37,19 +37,25 @@
 	<div class="row cl">
 		<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>用户昵称：</label>
 		<div class="formControls col-xs-8 col-sm-9">
-			<input type="text" class="input-text" value="" placeholder="" name="nickname">
+			<input type="text" class="input-text" value="" placeholder="" name="nickName" id="nickName">
 		</div>
 	</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>用户头像：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<input type="file" class="input-text" autocomplete="off" value=""  id="avatarurl" name="avatarurl">
+				<input type="file" class="input-text" autocomplete="off" value=""  id="avatarUrl" name="avatarUrl">
 			</div>
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>性别：</label>
 			<div class="formControls col-xs-8 col-sm-9">
 				<input type="text" class="input-text" value="" placeholder="" id="gender" name="gender">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>使用语言：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input style="width: 100%" type="number" class="input-text" value="{$data.language}" placeholder="" id="language" name="language">
 			</div>
 		</div>
 	<div class="row cl">
@@ -68,12 +74,6 @@
 			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>城市：</label>
 			<div class="formControls col-xs-8 col-sm-9">
 				<input type="text" class="input-text" value="" placeholder="" id="city" name="city">
-			</div>
-		</div>
-		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>手机号码：</label>
-			<div class="formControls col-xs-8 col-sm-9">
-				<input style="width: 100%" type="number" class="input-text" value="" placeholder="" id="mobile" name="mobile">
 			</div>
 		</div>
 	<div class="row cl">

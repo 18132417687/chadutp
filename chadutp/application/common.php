@@ -1,13 +1,13 @@
 <?php
-// function https($url){
-//     $ch = curl_init();
-//     // 2. 设置选项，包括URL
-//     curl_setopt($ch,CURLOPT_URL,$url);
-//     curl_setopt($ch,CURLOPT_RETURNTRANSFER,1);
-//     curl_setopt($ch,CURLOPT_HEADER,0);
-//     $output = curl_exec($ch);
-//     return $output;
-// }
+//function https($url){
+//    $ch = curl_init();
+//    // 2. 设置选项，包括URL
+//    curl_setopt($ch,CURLOPT_URL,$url);
+//    curl_setopt($ch,CURLOPT_RETURNTRANSFER,1);
+//    curl_setopt($ch,CURLOPT_HEADER,0);
+//    $output = curl_exec($ch);
+//    return $output;
+//}
 // +----------------------------------------------------------------------
 // | ThinkPHP [ WE CAN DO IT JUST THINK ]
 // +----------------------------------------------------------------------

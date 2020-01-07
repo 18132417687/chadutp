@@ -42,10 +42,10 @@
 				<th>用户昵称</th>
 				<th>用户头像</th>
 				<th>性别</th>
+				<th>使用语言</th>
 				<th>所在国家</th>
 				<th>省份</th>
 				<th>城市</th>
-				<th>手机号码</th>
 				<th>操作</th>
 			</tr>
 		</thead>
@@ -55,13 +55,13 @@
 				<td><input type="checkbox" value="1" name=""></td>
 				<td>{$vo.id}</td>
 				<td>{$vo.openid}</td>
-				<td>{$vo.nickname}</td>
-				<td><img src="/chadutp/public/{$vo.avatarurl}" /></td>
+				<td>{$vo.nickName}</td>
+				<td><img src="/chadutp/public/{$vo.avatarUrl}" /></td>
 				<td>{$vo.gender}</td>
+				<td>{$vo.language}</td>
 				<td>{$vo.country}</td>
 				<td>{$vo.province}</td>
 				<td>{$vo.city}</td>
-				<td>{$vo.mobile}</td>
 				<td class="td-manage"><a style="text-decoration:none" onClick="admin_stop(this,'10001')" href="javascript:;" title="停用"><i class="Hui-iconfont">&#xe631;</i></a> <a title="编辑" href="{:url('user/user_edit',['id'=>$vo.id])}" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a> <a title="删除"  onclick="if(confirm('确认删除?')) location.href='del/id/{$vo.id}'" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
 			</tr>
 		{/volist}

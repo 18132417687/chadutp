@@ -95,9 +95,11 @@ class Common extends Controller
                 'num'=>'require',
             )
         ),
-        //模糊查询查找商品
-        'Search' =>array(
-          'index' =>array()
+        //商品模糊查询
+        'Search'=>array(
+            'index' =>array(
+//                'goods_title' =>'require'
+            )
         ),
         //用户
         'User' =>array(
